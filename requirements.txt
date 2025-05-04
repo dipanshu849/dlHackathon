@@ -74,6 +74,7 @@ greenlet==3.2.0
 griffe==1.7.2
 grpcio==1.68.0
 grpcio-status==1.68.0
+gunicorn==23.0.0
 h11==0.14.0
 httpcore==1.0.7
 httplib2==0.22.0
