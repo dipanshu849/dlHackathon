@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeinScope - Tear Vein Segmentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles if needed, though Tailwind should cover most */
+        body {
+            font-family: "Inter", sans-serif; /* Using Inter font */
+            background-color: #f0f4f8; /* Light background */
+        }
+        .image-container {
+            display: flex;
+            justify-content: around;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        .image-box {
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 0.5rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center;
+            flex: 1 1 300px; /* Flex properties for responsiveness */
+            max-width: 45%; /* Max width for larger screens */
+            min-width: 280px; /* Min width for smaller screens */
+        }
+        img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 0.375rem; /* Slightly smaller rounded corners for images */
+            margin-top: 1rem;
+        }
+        input[type="file"] {
+            display: none; /* Hide default file input */
+        }
+        .custom-file-upload {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            background-color: #4f46e5; /* Indigo 600 */
+            color: white;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .custom-file-upload:hover {
+            background-color: #4338ca; /* Indigo 700 */
+        }
+        #loadingMessage {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #374151; /* Gray 700 */
+        }
+    </style>
+</head>
+<body class="p-6">
+
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">VeinScope - Tear Vein Segmentation</h1>
+
+        <div class="text-center mb-8">
+            <label for="imageUpload" class="custom-file-upload">
+                Choose Eye Image
+            </label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <p id="loadingMessage" class="hidden">Processing image...</p>
+        </div>
+
+        <div class="image-container">
+            <div class="image-box">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Original Image</h2>
+                <img id="originalImage" src="#" alt="Original Eye Image" class="hidden">
+                <p id="originalPlaceholder" class="text-gray-500">Upload an image to see it here.</p>
+            </div>
+
+            <div class="image-box">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Segmented Veins</h2>
+                <img id="segmentedImage" src="#" alt="Segmented Vein Pattern" class="hidden">
+                 <p id="segmentedPlaceholder" class="text-gray-500">Segmented image will appear here after processing.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>

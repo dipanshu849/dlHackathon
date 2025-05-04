@@ -1,0 +1,70 @@
+/*
+  This file contains custom CSS.
+  Most styling is handled by Tailwind CSS directly in the HTML.
+  Add any specific overrides or complex styles here if needed.
+*/
+
+/* Ensure body uses the Inter font */
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/* Basic styling for the image containers */
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.image-box {
+    margin: 1rem; /* Spacing around each box */
+    padding: 1rem; /* Inner padding */
+    background-color: #fff; /* White background */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text and images */
+    flex: 1 1 300px; /* Flex properties: grow, shrink, base-width */
+    max-width: 45%; /* Max width to prevent boxes from getting too wide */
+    min-width: 280px; /* Minimum width to ensure readability on small screens */
+}
+
+/* Styling for the images inside the boxes */
+.image-box img {
+    max-width: 100%; /* Images should not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0.375rem; /* Slightly smaller rounded corners for images */
+    margin-top: 1rem; /* Space above the image */
+}
+
+/* Hide the default file input button */
+input[type="file"] {
+    display: none;
+}
+
+/* Style the custom file upload label */
+.custom-file-upload {
+    display: inline-block; /* Allows padding and margin */
+    padding: 0.75rem 1.5rem; /* Vertical and horizontal padding */
+    cursor: pointer; /* Indicate it's clickable */
+    background-color: #4f46e5; /* Indigo 600 from Tailwind */
+    color: white; /* White text */
+    border-radius: 0.5rem; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the custom file upload button */
+.custom-file-upload:hover {
+    background-color: #4338ca; /* Darker indigo on hover */
+}
+
+/* Styling for the loading message */
+#loadingMessage {
+    margin-top: 1rem; /* Space above the message */
+    font-style: italic; /* Italic text */
+    color: #374151; /* Gray 700 from Tailwind */
+}
+
+/* Hide elements using the 'hidden' class (used by JS) */
+.hidden {
+    display: none;
+}
